@@ -1,0 +1,31 @@
+<ion-view view-title="Choose your address" ng-init="getAddresses()">
+    <ion-content>
+        <div class="list" ng-show="userAddresses">
+            <div class="item item-divider">Saved Address</div>
+            <div class="item" ng-repeat="address in userAddresses" ng-click="chooseAddress(address)">
+                <div class="row">
+                    <div class="col col-10">
+                        <i class="fa fa-home fa-2x custom-home-icon-orange" ng-show="address.addressType=='Home'"></i>
+                        <i class="fa fa-building-o fa-2x custom-home-icon-orange" ng-show="address.addressType=='Office'"></i>
+                        <i class="ion-ios-location-outline location_custom_size color_orange" ng-show="address.addressType!='Office' && address.addressType!='Home'"></i>
+                        
+                        <br />
+                        <span class="small-text">{{address.addressType}}</span>
+                    </div>
+                    <div class="col col-90">
+                        <div class="item-text-wrap text-center">
+                            {{address.address}} &nbsp;{{address.area}}
+                        </div>
+                    </div>
+<!--                    <div class="col col-10">
+                        <a href="#" class="button button-icon fa fa-edit fa-1x custom-edit-icon-orange"></a>
+                    </div>-->
+                </div>
+            </div>
+
+        </div>
+
+        <a class="button button-block button-balanced" ng-href="#app/addaddress/checkout">+Add a new address</a>
+
+    </ion-content>
+</ion-view>

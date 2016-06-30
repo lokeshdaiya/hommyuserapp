@@ -1,0 +1,106 @@
+<ion-view view-title="My Orders" ng-init="getUserOrders()">
+        <ion-tabs class="tabs-striped tabs-top tabs-color-assertive tabs-color-light">
+          <ion-tab title="Live Orders">
+              <ion-view >
+                  <ion-content>
+                      <div ng-hide="liveOrderList" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+                      <div ng-if="liveOrderList.length==0" class="row text-center">
+                          <div class="col col-center">
+                              <h3>Oops..</h3>
+                              <p>No live orders</p>
+                              <a class="button button-assertive button-small" ng-href="#/app/kitchen">Order Now</a>
+                          </div>
+                      </div>
+                      <div class="card" ng-show="liveOrderList" ng-repeat="order in liveOrderList">
+                        <div class="item item-text-wrap text-center">
+                              <div class="row">
+                                  <div class="col-50">
+                                      <p class="text">{{order._kitchen}}</p>
+                                      <p class="text">Address</p>
+                                  </div>
+                                  <div class="col-50">
+                                      <p class="text-center">Order id: {{order.orderId}}</p>
+                                      <p class="text-center">{{order.createdAt}} </p>
+                                  </div>
+                              </div>
+                              <div class="item item-text-wrap"> 
+                                  <div class="row">
+                                      <div class="col-50">
+                                          <p class="text">{{order.orderStatus}}</p>
+                                          <p class="text" ng-hide="order.orderStatus=='Placed'">Pre-order needs homechefs acceptance, please wait for a while.</p>
+                                      </div>
+                                      <div class="col-50">
+                                          <p class="text-center">2h 40 m</p>
+                                          <p class="text-center">Left</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="item"> 
+                                  <div class="row">
+                                      <div class="col-50">
+                                          <button class="button button-assertive button-clear">View Details</button>
+                                      </div>
+                                      <div class="col-50">
+                                          <button class="button button-assertive button-clear">Re-Order</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </ion-content>
+              </ion-view>
+          </ion-tab>
+
+          <ion-tab title="Past Orders">
+            <ion-view>
+                  <ion-content>
+                      <div ng-hide="pastOrderList" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+                      <div ng-if="pastOrderList.length==0" class="row text-center" >
+                          <div class="col col-center">
+                              <h3>Oops..</h3>
+                              <p>No live orders</p>
+                              <a class="button button-assertive button-small" ng-href="#/app/kitchen">Order Now</a>
+                          </div>
+                      </div>
+                      <div class="card" ng-show="pastOrderList" ng-repeat="order in pastOrderList">
+                          <div class="item item-text-wrap text-center">
+                              <div class="row">
+                                  <div class="col-50">
+                                      <p class="text">{{order._kitchen}}</p>
+                                      <p class="text">Address</p>
+                                  </div>
+                                  <div class="col-50">
+                                      <p class="text-center">Order id: {{order.orderId}}</p>
+                                      <p class="text-center">{{order.createdAt}} </p>
+                                  </div>
+                              </div>
+                              <div class="item item-text-wrap"> 
+                                  <div class="row">
+                                      <div class="col-50">
+                                          <a class="text" ng-class="{'balanced':order.orderStatus=='Placed'}">{{order.orderStatus}}</a>
+                                          <p class="text" ng-hide="order.orderStatus=='Placed'">Pre-order needs homechefs acceptance, please wait for a while.</p>
+                                      </div>
+                                      <div class="col-50" ng-hide="order.orderStatus=='Placed'">
+                                          <p class="text-center">2h 40 m</p>
+                                          <p class="text-center">Left</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="item"> 
+                                  <div class="row">
+                                      <div class="col-50">
+                                          <button class="button button-assertive button-clear">View Details</button>
+                                      </div>
+                                      <div class="col-50">
+                                          <button class="button button-assertive button-clear">Re-Order</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </ion-content>
+              </ion-view>
+          </ion-tab>
+
+</ion-view>

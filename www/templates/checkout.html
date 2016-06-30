@@ -1,0 +1,116 @@
+<ion-view view-title="Checkout" ng-init="getTotalCost()">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-divider">
+                DELIVERY DETAILS
+            </div>    
+            <div class="item" href="#">
+                <div class="row">
+                    <div class="col col-40">
+                        Address
+                    </div>
+                    <div class="col col-60">
+                        <a ng-show="userDetails.defaultAddress.addressType!=''" ng-href="#app/chooseaddress" class="button button-clear">
+                            <i class="fa fa-home fa-2x color_orange" ng-show="userDetails.defaultAddress.addressType=='Home'"></i>
+                            <i class="fa fa-building-o fa-2x color_orange" ng-show="userDetails.defaultAddress.addressType=='Office'"></i>
+                            <i class="ion-ios-location-outline location_custom_size color_orange" ng-show="userDetails.defaultAddress.addressType!='' && userDetails.defaultAddress.addressType!='Home' && userDetails.defaultAddress.addressType!='Office'"></i>
+                            <span>{{userDetails.defaultAddress.addressType}}</span>
+                        </a>
+                        <a ng-hide="userDetails.defaultAddress.addressType" ng-href="#app/chooseaddress" class="button button-clear button-balanced">Choose Address</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item" href="#">
+                <div class="row item-note" >
+                    <div class="col col-50 pull-left">
+                        <i class="fa fa-clock-o custom-location-icon-green"></i> 
+                        Delivery Time
+                    </div>
+                    <div class="col col-50 pull-right">
+                        <label class="item item-input">
+                            <span class="input-label">Tomorrow</span>
+                            <input type="time"/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-divider">
+                PAYMENT DETAILS
+            </div>
+            <label class="item item-input item-select">
+                <i class="fa fa-credit-card"></i> &nbsp;&nbsp;
+                <div class="input-label">
+                    Payment Method
+                </div>
+                <select>
+                    <option>Credit Card</option>
+                    <option selected>Paytm</option>
+                    <option>Debit Card</option>
+                </select>
+            </label>
+
+            <label class="item item-input">
+                <i class="fa fa-code"></i> &nbsp;&nbsp;
+                <input type="text" placeholder="Promo Code"/>
+            </label>
+
+
+            <div class="item item-divider">
+                ORDER DETAILS -{{orderDishes.kitchenName}}
+            </div>
+
+            <div class="item" ng-repeat="dish in orderDishes track by $index">
+                <div class="row">
+                    <div class="col col-75">   
+                        {{dish.cartCount}} x{{dish.name}}
+                    </div>
+                    <div class="col col-25">   
+                        <i class="fa fa-inr"></i><span> {{dish.totalCost}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item lighten">
+                <div class="row">
+                    <div class="col col-75">   
+                        SubTotal
+                    </div>
+                    <div class="col col-25">   
+                        <i class="fa fa-inr"></i><span> {{subTotal}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-75">   
+                        Taxes
+                    </div>
+                    <div class="col col-25">   
+                        <i class="fa fa-inr"></i><span> 0.00</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-75">   
+                        Delivery charges
+                    </div>
+                    <div class="col col-25">   
+                        <i class="fa fa-inr"></i><span> {{deliveryCharges}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col col-75">   
+                        Total Payable amount
+                    </div>
+                    <div class="col col-25">   
+                        <i class="fa fa-inr"></i><span> {{totalCost}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </ion-content>
+    <ion-footer-bar class="bar-light">
+        <a ng-click="placeOrder()" class="title button button-balanced">Place Order</a>
+    </ion-footer-bar>
+</ion-view>
+

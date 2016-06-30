@@ -1,0 +1,17 @@
+<ion-view view-title="Process Payment" >
+    <ion-content>  
+        <center><h1>Please do not refresh this page...</h1></center>
+        <form name="PaymentForm" method="POST" action="https://pguat.paytm.com/oltp-web/processTransaction" >
+            <div class="list">
+                <div class="item" ng-repeat="(key,value) in formData">
+                 <input type="text" name="{{key}}" value="{{value}}"/>
+                </div>
+                <div>
+                             <input type="submit" value="submit"/>
+                </div>
+            </div>
+        </form>
+        
+
+    <ion-content>        
+</ion-view>

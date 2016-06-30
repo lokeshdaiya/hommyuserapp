@@ -1,0 +1,66 @@
+<!--<ion-side-menus enable-menu-with-back-views="true"></ion-side-menus>-->
+<ion-view view-title="Kitchens">
+    <ion-content ng-init="$parent.homeFilter={}" has-header="true" has-tabs="true">
+        <div class="filter-nav">
+            <div class="text-center">
+                <ul>
+                    <li class="filter filterbutton" ng-class="filter.quick == true ? 'balanced' : ''" ng-click="filterByQuick()">
+                        <i class="fa fa-clock-o"></i> Quick
+                    </li>
+                    <li class="filter filterbutton" ng-class="filter.veg == true ? 'balanced' : ''" ng-click="filterByVeg()">
+                        <i class="fa fa-leaf"></i> Pure Veg
+                    </li>
+                    <li class="filter filterbutton">
+                        <a ng-href="#app/cuisines"><i class="fa fa-star"></i> Cuisines</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div ng-hide="chefs" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>
+        <ion-list ng-show="chefs">
+            <ion-item class="card chef-card" ng-repeat="chef in chefs|filter:homeFilter|orderBy:kitchenSort" href="#/app/kitchen/{{chef._id}}/{{chef.name}}">
+            <div class="row separator">
+                <div class="col col-25">
+                    <img class="full-image" ng-src="{{chef.images[0]==null && 'http://www.hommy.in/wp-content/uploads/2015/08/Homemade-Foods-Order-Online-Hyderabad.jpg' || dish.images[0] }}"/>
+                </div>
+                <div class="col col-75 chef">
+                    <div class="separator">
+                        <h4 class="margin-top">{{chef.name}}</h4>
+                        <div class="small-text lighten">{{chef.cuisines | addarrays}}</div>
+                    </div>
+                    <div class="row clear-padding">
+                        <div class="col col-34 font-98">
+                            <i class="fa fa-clock-o"></i>
+                            <small >{{chef.deliveryTime}} min...</small>
+                        </div>
+                        <div class="col col-66 ratings">
+                            <div>{{chef.rating}} <i class="fa fa-star {{chef.rating|getRatings}}"></i>
+                                <small class="lighten">3 {{chef.ratings}} foodies</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col assertive text-center">
+                    10% off on bill
+                </div>
+            </div>
+     
+            </ion-item>
+        </ion-list>
+        
+    </ion-content>
+    <div class="bar bar-footer bar-light" ng-show="currentAddress">
+        <div class="col-10">
+            <i class="ion-ios-location custom-location-icon-red"></i>
+        </div>
+        <div class="col-75 truncatedText" ng-show="currentAddress">
+            {{currentAddress}}
+        </div>
+        <div class="col-15">
+            <a class="button button-icon" ng-href="#app/location">Edit</a>
+        </div>
+    </div>
+</ion-view>
+

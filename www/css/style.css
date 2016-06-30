@@ -1,0 +1,295 @@
+/* Empty. Add your own CSS if you like */
+/*Universal*/
+.clear-padding{
+  padding-left: 0;
+  padding-right:0;
+}
+.separator{
+  border-bottom: 1px solid #e8e8e8;
+}
+.full-width{
+  width: 100%;
+}
+.font-98{
+    font-size: 98%;
+}
+.lighten{
+    color: #736E6E;
+}
+.margin-top{
+    margin-top: 0;
+}
+.button-small.button-icon:before{
+    font-size: 20px !important;
+}
+.user-details i{
+    font-size: 32px;
+    margin: 10px;
+}
+.chef{
+  position: relative;
+}
+.chef .ratings{
+  text-align: right;
+}
+.chef .ratings i{
+    margin: 0 3px;
+    text-shadow: 1px 1px #ccc;
+}
+.chef-card{
+    margin: 5px !important;
+}
+.chef-card .row,.chef-card .col-20{
+    padding: 0;
+}
+ion-list i{
+  margin-right: 7px;
+  font-size: 18px;
+}
+.chef-card .col.assertive.text-center{
+    padding-bottom: 0;
+    padding-top: 8px;
+}
+
+.pac-logo:after{
+  background-image:none !important;
+  height:1px !important;
+}
+.location .icon{
+    font-size: 18px;
+}
+
+/*FilterNavigation*/
+.filter-nav {
+    background: rgba(204, 204, 204, 0.09);
+}
+.filter-nav .col{
+  position: relative;
+  padding: 0;
+}
+.filter-nav .filterbutton.full-width{
+  position: relative;
+}
+.filter-nav .filterbutton.full-width span:first-child{
+  width: 24px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  padding: 0 5px;
+  color: #fff;
+}
+.filter-nav .filterbutton.full-width strong{
+  margin-left: 20px;
+}
+.filter-nav li.filter{
+    display: inline-block;
+    width: 75px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    min-height: 20px !important;
+    line-height: 20px;
+    margin: 6px;
+    
+}
+.filter-nav li a{
+    text-decoration:none;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+}
+/*Footer Styles*/
+.hommy-footer .ion-bag{
+  font-size: 30px !important;
+  padding-left: 10px;
+}
+.item-action{
+  text-align: right;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.item-action .button{
+  display: inline;
+  padding: 8px 12px;
+  font-size: 14px !important;
+  min-width: 22px !important;
+}
+
+.item-action .item-add-button-active,.item-action .item-add-button-active:hover{
+    background-color: #fff;
+    color:#ef473a;
+}
+
+.item-action span{
+  font-size: 14px !important;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+/*Star Colors*/
+.star-green-dark{
+  color: #1B5E20;
+}
+.star-green-light{
+  color: #558B2F;
+}
+.star-green-ex-light{
+  color: #7CB342;
+}
+.star-light{
+  color: #FFE082;
+}
+
+/*BackGround Colors*/
+.back-green{
+  background: #33cd5f;
+}
+.back-gray{
+  background: gray;
+}
+
+
+/*location*/
+.custom-location-icon-red {
+  font-size: 25px;
+  color : red;
+  padding:2px;
+  font-weight: 200;
+}
+.custom-location-icon-green{
+    color: green;
+    padding:1px
+
+}
+.truncatedText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.bar-light .button{
+    color:red;
+
+}
+
+/*loading css*/
+.loading-spinner {
+    text-align: center;
+}
+
+.spinner svg {
+    width: 19% !important;
+    height: 85px !important;
+    margin-top: 200px !important;
+}
+
+
+/*address css*/
+
+.custom-home-icon-orange{
+ color:orange;   
+}
+.custom-edit-icon-orange{
+ color:orange;   
+}
+
+.color_orange{
+    color:orange;
+}
+
+
+.location_custom_size{
+    font-size: 2.5em;
+}
+
+/*side menu*/
+
+/*body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+.item {
+  font-size: 14px !important;
+}
+
+$balanced: #1aa1e1;
+$fontColor: #ffffff;
+$logo: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/256302/ionic-logo-white.png';
+
+.company-logo {
+  vertical-align: middle;
+  max-width: 60%;
+  content: url($logo);
+}
+
+.bar-balanced {
+  background-color: $balanced !important;
+  border-color: darken($balanced, 5%) !important;
+}
+
+.platform-android {
+  $menu-background: #555555;
+
+  .menu {
+    background-color: $menu-background !important;
+
+    & a:not(.item-divider):hover, & a:not(.item-divider):active {
+      background-color: #464646;
+      background-image: linear-gradient(left, $balanced, $balanced 7px, transparent 7px, transparent 100%) !important;
+      background-image: -webkit-linear-gradient(left, $balanced, $balanced 7px, transparent 7px, transparent 100%) !important;
+    }
+
+    .active {
+      background-color: #464646 !important;
+      background-image: linear-gradient(left, $balanced, $balanced 7px, transparent 7px, transparent 100%) !important;
+      background-image: -webkit-linear-gradient(left, $balanced, $balanced 7px, transparent 7px, transparent 100%) !important;
+    }
+
+    .item, .bar-header {
+      background-color: transparent;
+      color: #ffffff;
+      border: none;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      i:before {
+        font-size: 22px;
+      }
+    }
+
+    .bar-header {
+      background-color: $balanced;
+    }
+  }
+
+   Override the Ionic icons with Android specific ones 
+  // ion-android-home
+  .ion-home:before {
+    content: "\f38f";
+  }
+
+  // ion-android-checkbox-outline
+  .ion-compose:before {
+    content: "\f373";
+  }  
+
+  // ion-android-contacts
+  .ion-person:before {
+    content: "\f2d9";
+  }
+}*/
+
+
+.icon-item{
+    background: url(../img/items.svg);
+    height:48px;
+    width:48px;
+}
+.item-number{
+    
+}

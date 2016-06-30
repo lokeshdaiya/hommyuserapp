@@ -1,0 +1,53 @@
+<ion-view view-title="Add your address" ng-init="showMap()">
+    <ion-content>        
+        <div id="map" data-tap-disabled="true" ng-hide="adderssFromMap"></div>
+        
+        <div ng-show="adderssFromMap">
+        <div class="card" >
+            <div class="list">
+                <div class="item item-divider">
+                    <span>Address Details</span>
+                </div>
+                <label class="item item-input">
+                    <textarea ng-model="adderssFromMap.address" placeholder="Tap to add Building Name/Flat Number">{{adderssFromMap.address}}</textarea>
+                </label>
+                <label class="item">
+                    {{adderssFromMap.area}}
+                </label>
+            </div>
+
+        </div>
+            <div class="card">
+                <div class="list">
+                    <div class="item item-divider">Tag address as</div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-33 text-center" ng-click="setAddressType('Home')" ng-disbaled="isHomeDisabled">
+                                <i class="fa fa-home fa-2x" ng-class="{'color_orange':adderssFromMap.addressType=='Home'}"></i><br/>
+                                <span class="small-text">Home</span>
+                            </div>
+                            <div class="col-33 text-center" ng-click="setAddressType('Office')" ng-disbaled="isOfficeDisabled" >
+                                <i class="fa fa-building-o fa-2x" ng-class="{'color_orange':adderssFromMap.addressType=='Office'}" ></i><br/>
+                                <span class="small-text">Office</span>
+                            </div>
+                            <div class="col-33 text-center" ng-click="setAddressType('Other')">
+                                <i class="ion-ios-location location_custom_size" ng-class="{'color_orange':adderssFromMap.addressType=='Other'}"></i><br/>
+                                <span class="small-text">Other</span>
+                            </div>
+                        </div>
+                        <div class="item item-input">
+                            <input ng-model="$parent.otherAddressType" type="text" placeholder="e.g Hostel" ng-show="showother"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            </div>
+    </ion-content>
+    <ion-footer-bar class="bar-light">
+      <a ng-show="adderssFromMap" class="title button buttom-large icon-right ion-chevron-right button-balanced" ng-click="addAddress()">Procceed</a>
+      <a ng-hide="adderssFromMap" ng-click="GetCurrentLocation()" class="title button button-balanced">Pick Location</a>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,17 @@
+<ion-view  view-title="Login or sign Up" ng-init="user={}">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Mobile Number</span>
+                <input type="number" placeholder="Mobile Number" ng-model="user.mobile"/>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Mobile Number</span>
+                <input type="password" placeholder="password" ng-model="user.password"/>
+            </label>
+            <label class="item">
+                <button class="button button-full button-balanced" ng-click="signIn()">Submit</button>
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

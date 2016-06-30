@@ -1,0 +1,20 @@
+<ion-view view-title="Cuisines" ng-init="getCuisines()">
+    <ion-content>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search" ng-model="cuisineFilter">
+          </label>
+        </div>
+        <div class="item item-divider">
+            Available Cuisines
+        </div>
+        <div class="list">
+            <ion-checkbox class="checkbox-balanced" ng-repeat="cuisine in cuisinesArray|filter:cuisineFilter" ng-model="cuisine.selected">{{cuisine.name}}</ion-checkbox>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-light">
+        <a ng-click="getSelectedCuisines()" class="title button button-balanced">Apply filter</a>
+    </ion-footer-bar>
+</ion-view>
+

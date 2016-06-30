@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
+
+    <meta http-equiv="Content-Security-Policy"/>
+
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet"/>
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet"/>
+    
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!--    ng cordova-->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <!--    Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!--Google Places-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<!--    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>-->
+    <script src="lib/googlePlacesAutocomplete/autocomplete.min.js"></script>
+    <link rel="stylesheet" href="lib/googlePlacesAutocomplete/autocomplete.min.css"/>
+
+    <!--    Twitter Digit-->
+    <script id="digits-sdk" src="https://cdn.digits.com/1/sdk.js" async></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="lib/angular-jwt.js"></script>
+<!--    <script type="text/javascript" src="lib/twitter-digit/inappbrowser.js"></script>
+  <script type="text/javascript" src="lib/twitter-digit/digitsCordova.js"></script>-->
+    
+    
+    <style>
+        .scroll{
+            height: 100%;
+        }
+
+        #map{
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+    
+</head>
+
+<body ng-app="hommy">
+    <ion-nav-view></ion-nav-view>
+</body>
+</html>

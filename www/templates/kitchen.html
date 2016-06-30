@@ -1,0 +1,43 @@
+<ion-view view-title="{{kitchenName}}" ng-init="getDishes()">
+  <ion-content>
+    <div ng-hide="dishes" class="loading-spinner"><ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner></div>  
+    <div class="list card" ng-repeat="dish in dishes" ng-show="dishes">
+      <div class="item item-image">
+        <img ng-src="{{dish.images[0]==null && 'http://www.hommy.in/wp-content/uploads/2015/08/Homemade-Foods-Order-Online-Hyderabad.jpg' || dish.images[0] }}"/>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <div class="col">
+          <i class="ion-android-checkbox-blank" ng-class="dish.veg == true ? 'balanced' : 'assertive'"></i>
+          <span>{{dish.name}}</span>
+        </div>
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <div class="col">
+          <i class="fa fa-inr"></i><span> {{dish.price}}</span>
+        </div>
+          <div class="col item-action" ng-init="dish.cartCount>0 ? dish.cartCount = dish.cartCount:dish.cartCount=0">
+            <a class="button button-light" ng-click="decrease($index)" ng-hide="dish.cartCount==0">-</a>
+            <span ng-show="dish.cartCount>0">{{dish.cartCount}}</span>
+          <a ng-class="{'item-add-button-active':dish.cartCount>0}" class="button button-assertive" ng-click="increase($index)">+ Add</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+    <ion-footer-bar class="bar-stable" ng-show="orderDishes.length>0">
+
+            <div class="hommy-footer">
+               <img src="img/items.svg" height="32px;"  width="32px;"/>
+           </div>
+            <div class="title-left">
+                <span class="text-center item-number">{{cartItemCount}}</span>
+                <span>|</span>
+               <i class="fa fa-inr"></i><span> {{subTotal}}</span>
+            </div>
+          <a class="pull-right button button-assertive icon-right ion-chevron-right" ng-click="gotoCheckOut()">
+              Proceed
+          </a>
+    
+
+  </ion-footer-bar>
+</ion-view>
